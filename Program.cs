@@ -16,16 +16,19 @@
 
                 Producto nuevoProducto = new Producto(producto,precio);
                 lista.InsertarProducto(nuevoProducto);
-
-                Console.Write("\nIngrese el precio a buscar: ");
-                int precio1 = Convert.ToInt32(Console.ReadLine());
-                lista.buscarPrecio(precio1);
-
                
             }
+            lista.Mostar();
+
+
+            Console.Write("Ingrese el precio a buscar: ");
+            int precio1 = Convert.ToInt32(Console.ReadLine());
+            lista.buscarPrecio(precio1);
+
+
             lista.ordenarDecedente();
 
-            Console.WriteLine("Esta es la lista de precio ordenada de manera descendente:");
+            Console.WriteLine("Esta es la lista de precio ordenada de maera Creciente:");
             lista.Mostar();
         }
     }

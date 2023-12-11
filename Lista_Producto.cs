@@ -21,20 +21,19 @@ namespace RU1yU2
        public void InsertarProducto(Producto nuevoProducto)
        {
          Nodo nodocabeza = new Nodo(nuevoProducto);
-            Nodo nodoActual = new Nodo(nuevoCarro);
-            if (ListaVacia())
+            if(ListaVacia())
             {
-                Primero = nodoActual;
+                cabeza = nodocabeza;
                 return;
             }
 
-            Nodo actual = Primero;
+            Nodo actual = cabeza;
             while (actual.Siguiente != null)
             {
                 actual = actual.Siguiente;
             }
 
-            actual.Siguiente = nodoActual;
+            actual.Siguiente = nodocabeza;
         }
        public void buscarPrecio(int buscarPrecio)
        {
@@ -74,7 +73,7 @@ namespace RU1yU2
 
                 while (siguiente != null)
                 {
-                    if (Actual.Valor.Precio < siguiente.Valor.Precio)
+                    if (Actual.Valor.Precio > siguiente.Valor.Precio)
                     {
                         Producto temp = Actual.Valor;
                         Actual.Valor = siguiente.Valor;
